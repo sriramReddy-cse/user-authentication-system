@@ -1,0 +1,18 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /api/v1
+spring:
+  servlet:
+    multipart:
+      max-file-size: 50MB #used to create the files and uploading the file it should be less than 50 mb
+  profiles:
+    active: dev
+springdoc:
+  default-produces-media-type: application/json
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /v3/api-docs

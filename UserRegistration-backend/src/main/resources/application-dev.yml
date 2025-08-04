@@ -1,0 +1,55 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/book_social_network
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  mail:
+    host: localhost
+    port: 1025
+    username: ""
+    password: ""
+    protocol: smtp
+    smtp:
+      auth: true
+      starttls:
+        enable: true
+      timeout: 5000
+      connectiontimeout: 5000
+      writetimeout: 5000
+
+
+application:
+  security:
+    jwt:
+      secret-key: yI4QpLW4JMz2z9M8BQn1fRdYzLkH7T8jK5wR2Vn3ZxPv9Q6R
+      expiration:  86400000 #It means that the token is expired after one day
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
+  file:
+    output:
+      photos-output-path: ./uploads
+server:
+  port: 8088
+
+springdoc:
+  api-docs:
+    enabled: true # Enables the OpenAPI API docs
+    path: /v3/api-docs # Default path for OpenAPI docs
+
+  swagger-ui:
+    enabled: true # Enables the Swagger UI
+    path: /swagger-ui.html # Path for Swagger UI
+    url: /v3/api-docs # URL to access OpenAPI docs
